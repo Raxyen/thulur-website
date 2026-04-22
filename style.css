@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --bg: #0B1120;
+  --bg-secondary: #111827;
+  --card: rgba(30, 41, 59, 0.6);
+  --border: rgba(148, 163, 184, 0.15);
+  --text: #E2E8F0;
+  --muted: #94A3B8;
+
+  --blue: #3B82F6;
+  --purple: #8B5CF6;
+  --gradient: linear-gradient(135deg, #3B82F6, #8B5CF6);
+}
+
+body {
+  margin: 0;
+  font-family: 'Public Sans', sans-serif;
+  background: radial-gradient(circle at top, #0F172A, #020617);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* HEADERY + LOGO = LORA */
+
+h1, h2, h3 {
+  font-family: 'Lora', serif;
+  letter-spacing: 0.5px;
+}
+
+/* subtitle może być bardziej “UI style” */
+.subtitle {
+  font-family: 'Public Sans', sans-serif;
+}
+
+.hero h1 {
+  font-family: 'Lora', serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.feature h2 {
+  font-family: 'Lora', serif;
+  font-weight: 500;
+}
+
+/* ================= NAVBAR ================= */
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 18px 0;
+
+  backdrop-filter: blur(12px);
+  background: rgba(2, 6, 23, 0.6);
+  border-bottom: 1px solid var(--border);
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-family: 'Public Sans', sans-serif;
+
+  transition: all 0.25s ease;
+}
+
+nav a:hover {
+  background: rgba(59, 130, 246, 0.15);
+  color: #93C5FD;
+  transform: translateY(-1px);
+}
+
+/* ================= HEADER ================= */
+
+header {
+  text-align: center;
+  padding: 160px 20px 120px;
+  position: relative;
+}
+
+/* glow background */
+header::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(139,92,246,0.25), transparent 70%);
+  filter: blur(120px);
+  z-index: -1;
+}
+
+h1 {
+  font-size: 5rem;
+  margin-bottom: 20px;
+
+  background: linear-gradient(90deg, #60A5FA, #A78BFA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  color: var(--muted);
+  max-width: 750px;
+  margin: auto;
+}
+
+/* ================= SECTIONS ================= */
+
+.section,
+.description {
+  max-width: 1000px;
+  margin: 120px auto;
+  padding: 0 20px;
+}
+
+h2 {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+}
+
+/* ================= GLASS CARD ================= */
+
+.highlight {
+  background: var(--card);
+  backdrop-filter: blur(16px);
+
+  padding: 40px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  transition: 0.3s;
+}
+
+.highlight:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+/* ================= TEAM ================= */
+
+.team-list {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+
+  max-width: 1100px;
+  margin: 50px auto;
+}
+
+.team-card {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+
+  padding: 28px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* glow hover */
+.team-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(139,92,246,0.2), transparent);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.team-card:hover::before {
+  opacity: 1;
+}
+
+.team-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: rgba(139,92,246,0.4);
+}
+
+.team-card strong {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.role {
+  display: block;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ================= SCHEDULE ================= */
+
+.schedule {
+  display: grid;
+  gap: 30px;
+}
+
+.month {
+  background: var(--card);
+  padding: 30px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+
+  transition: 0.3s;
+}
+
+.month:hover {
+  transform: translateY(-4px);
+  border-color: var(--blue);
+}
+
+.month h3 {
+  margin-bottom: 10px;
+  color: #93C5FD;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+/* ================= ANIMATIONS ================= */
+
+* {
+  scroll-behavior: smooth;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+/* ================= HERO BACKGROUND ================= */
+
+.hero {
+  position: relative;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* LAPTOP jako tło */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+
+  background: url("../images/thulur-laptop.png") center/cover no-repeat;
+
+  opacity: 0.25;
+  transform: scale(1.2);
+
+  filter: blur(2px) brightness(0.6);
+
+  z-index: 0;
+}
+
+/* gradient overlay – KLUCZ */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(circle at center,
+    rgba(15,23,42,0.2),
+    rgba(2,6,23,0.9)
+  );
+
+  z-index: 1;
+}
+
+/* content nad tym wszystkim */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+/* tekst */
+.hero h1 {
+  font-size: 5rem;
+}
+
+.hero .subtitle {
+  font-size: 1.4rem;
+  color: #cbd5f5;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 500px;
+
+  background: radial-gradient(circle,
+    rgba(59,130,246,0.25),
+    transparent 70%
+  );
+
+  filter: blur(120px);
+  z-index: 1;
+}
+
+/* ================= FEATURES ================= */
+
+.features {
+  max-width: 1100px;
+  margin: 120px auto;
+  padding: 0 20px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  margin-bottom: 120px;
+}
+
+/* tekst */
+.feature .text {
+  flex: 1;
+}
+
+.feature h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  color: var(--muted);
+}
+
+/* wizual (placeholder) */
+.feature .visual {
+  flex: 1;
+  height: 250px;
+  border-radius: 16px;
+
+  background: linear-gradient(135deg, #1E293B, #0F172A);
+  border: 1px solid var(--border);
+}
+
+/* odwracanie */
+.feature.right {
+  flex-direction: row-reverse;
+}
+
+/* ================= ANIMACJE ================= */
+
+.hidden {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 0.8s ease;
+}
+
+.hidden.left {
+  transform: translateX(-100px);
+}
+
+.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .feature {
+    flex-direction: column;
+  }
+}
