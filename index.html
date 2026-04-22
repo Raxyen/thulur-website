@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Thulur – Projekt</title>
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Projekt</a>
+  <a href="zespol.html">Zespół</a>
+  <a href="harmonogram.html">Harmonogram</a>
+  <a href="dokumentacja.html">Dokumentacja</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-bg"></div>
+
+  <div class="hero-content">
+    <h1>Thulur</h1>
+    <p class="subtitle">
+      AI analizuje newsy i pokazuje tylko to, co naprawdę ma znaczenie
+    </p>
+  </div>
+</header>
+
+<section class="features">
+
+  <div class="feature hidden left">
+    <div class="text">
+      <h2>Personalizowany feed</h2>
+      <p>
+        Thulur analizuje Twoje zainteresowania i wyświetla tylko najważniejsze informacje.
+      </p>
+    </div>
+    <div class="visual"></div>
+  </div>
+
+  <div class="feature hidden right">
+    <div class="visual"></div>
+    <div class="text">
+      <h2>AI analiza treści</h2>
+      <p>
+        Każdy artykuł jest analizowany i skracany do kluczowych informacji.
+      </p>
+    </div>
+  </div>
+
+  <div class="feature hidden left">
+    <div class="text">
+      <h2>Zero szumu informacyjnego</h2>
+      <p>
+        Eliminujemy nieistotne treści – dostajesz tylko to, co naprawdę ważne.
+      </p>
+    </div>
+    <div class="visual"></div>
+  </div>
+
+</section>
+
+<section class="description">
+  <h2>O projekcie</h2>
+  <p>
+    Thulur to nowoczesna aplikacja desktopowa pozwalająca użytkownikom śledzić
+    wybrane feedy i otrzymywać inteligentnie dobrane informacje.
+  </p>
+
+  <div class="highlight">
+    <h2>DeepFellow – serce naszej inteligencji</h2>
+    <p>
+      System analizuje zachowania użytkownika i dynamicznie dopasowuje treści,
+      eliminując szum informacyjny i skupiając się na tym, co najważniejsze.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p>Zespół 12 • Programowanie Zespołowe • 2026</p>
+</footer>
+
+</body>
+</html>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+document.querySelectorAll('.hidden').forEach(el => {
+  observer.observe(el);
+});
+</script>
