@@ -5,6 +5,23 @@
   <link rel="stylesheet" href="css/style.css">
   <title>Thulur – Projekt</title>
 </head>
+
+<script>
+const heroBg = document.querySelector('.hero-bg');
+
+window.addEventListener('scroll', () => {
+
+    const scroll = window.scrollY;
+
+    heroBg.style.transform = `
+        scale(${1.08 + scroll * 0.00015})
+        translateY(${scroll * 0.12}px)
+        rotateX(${scroll * 0.008}deg)
+        rotateZ(${scroll * -0.002}deg)
+    `;
+});
+</script>
+
 <body>
 
 <nav>
@@ -148,16 +165,6 @@
         aby przekształcić zwykły strumień newsów w uporządkowane, wartościowe źródło wiedzy.
         Dzięki temu użytkownik nie musi przebijać się przez nadmiar informacji samodzielnie.
       </p>
-    </div>
-
-    <div class="showcase-side">
-      <div class="mini-panel">
-        <span class="mini-panel-title">Core ideas</span>
-        <span class="mini-tag">AI assistance</span>
-        <span class="mini-tag">RSS ingestion</span>
-        <span class="mini-tag">Content ranking</span>
-        <span class="mini-tag">Daily summary</span>
-      </div>
     </div>
   </div>
 </section>
